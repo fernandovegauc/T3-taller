@@ -1,7 +1,7 @@
 <template>
 <div id="app" class="container">
   <div class="row">
-    <div class="column">
+    <div class="col-12">
       <Map :positions="positions" :flights="flights"> </Map>
     </div>
   </div>
