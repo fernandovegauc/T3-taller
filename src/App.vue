@@ -34,8 +34,10 @@
           <div class="card-body text-primary">
             <h5 class="card-title">Plane : {{ flight.plane }}</h5>
             <p class="card-text">
-              Plane: {{ flight.plane }}
+              Origin: ({{flight.origin[0]}}, {{flight.origin[0]}})
               <br />
+              Destination: ({{flight.destination[0]}}, {{flight.destination[0]}})
+               <br />
               Seats: {{ flight.seats }}
             </p>
           </div>
