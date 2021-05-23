@@ -22,7 +22,7 @@
         <form @submit.prevent="sendMessage">
           <input v-model="username" type="text" placeholder="Your Name" />
           <input v-model="message" type="text" placeholder="Your Message" />
-          <button>Send Message</button>
+          <button type="button" class="btn btn-primary">Send Message</button>
         </form>
       </div>
     </div>
