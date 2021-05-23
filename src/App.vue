@@ -64,12 +64,13 @@ export default {
       msgs: [],
       username: "",
       message: "",
+      hover: false
     };
   },
 
   sockets: {
     POSITION(data) {
-      this.positions.push(data.position);
+      this.positions.push(data);
      
     },
     FLIGHTS(data) {

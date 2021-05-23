@@ -6,7 +6,16 @@
         <l-polygon :lat-lngs="[flight.origin, flight.destination]"></l-polygon>
         <l-circle-marker :lat-lng="flight.origin"></l-circle-marker>
         <div v-for="pos in positions" :key="pos[0]">
-        <l-circle :lat-lng="pos" :radius="radius" :color="color2" ></l-circle>
+        <l-circle :lat-lng="pos.position" :radius="radius" :color="color2" >
+          <l-tooltip :options="{ permanent: false, interactive: true }">
+          <div >
+            Vuelo: {{pos.code}}
+            
+          </div>
+        </l-tooltip>
+        
+        
+        </l-circle>
         
         </div>
       </div>
@@ -19,7 +28,7 @@
 </template>
 
 <script>
-import { LMap, LTileLayer, LPolygon, LCircleMarker, LCircle } from "vue2-leaflet";
+import { LMap, LTileLayer, LPolygon, LCircleMarker, LCircle, LTooltip } from "vue2-leaflet";
 export default {
   name: "Map",
   components: {
@@ -27,7 +36,8 @@ export default {
     LTileLayer,
     LPolygon,
     LCircleMarker,
-    LCircle
+    LCircle,
+    LTooltip
   },
   props: ["positions", "flights"],
   data() {
